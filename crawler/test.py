@@ -134,12 +134,14 @@ def main():
     }
     
     
-    printCode(result)
+    #printCode(result)
     
-    CLOCK_URL = "https://signin.fcu.edu.tw/ClassClockin.aspx"
+    CLOCK_URL = "https://signin.fcu.edu.tw/clockin/ClassClockin.aspx"
     result = session_requests.post(CLOCK_URL, data = payload3, headers=headers)
     if result.status_code is 200:
         print("CLOCKIN successful")
+        
+    printCode(result)
     """
     soup3 = BeautifulSoup(result.text, "html.parser")
     print(soup3)
